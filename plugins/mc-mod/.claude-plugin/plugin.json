@@ -1,0 +1,16 @@
+{
+  "name": "mc-mod",
+  "version": "1.0.0",
+  "description": "Minecraft MOD 開発スキル。アイデアから MOD を作る mc-mod-create と、古い MOD／アドオンを新バージョンへ書き直す mc-mod-port。参考資料はコミット固定・SHA 検証つきで取得する。",
+  "author": {
+    "name": "nokopi"
+  },
+  "license": "MIT",
+  "keywords": [
+    "minecraft",
+    "mod",
+    "neoforge",
+    "fabric",
+    "modding"
+  ]
+}

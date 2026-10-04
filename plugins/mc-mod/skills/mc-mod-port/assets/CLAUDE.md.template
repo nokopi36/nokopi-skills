@@ -1,0 +1,47 @@
+# {{MOD_NAME}} {{TARGET_MC}} 書き直しプロジェクト
+
+{{MOD_NAME}}（{{SOURCE_MC}} / 原作者 {{ORIGINAL_AUTHOR}}）の仕様を、
+**{{LOADER}} {{TARGET_MC}}{{ADDON_SUFFIX}}** として新規実装するプロジェクト。
+旧バージョンのコードを「変換」するのではなく、仕様書（`docs/SPEC.md`）を正として書き直す。
+
+## 環境
+- Minecraft {{TARGET_MC}} / {{LOADER}} {{LOADER_VERSION}} / Java {{JAVA_VERSION}}
+- ビルド: {{BUILD_TOOL}}（`refs/{{TEMPLATE_REF}}` をテンプレートにする）
+<!-- アドオンの場合のみ -->
+- 依存: {{BASE_MOD_NAME}} {{TARGET_MC}}（API は `refs/{{BASE_MOD_REF}}/{{BASE_MOD_API_PATH}}` を参照）
+- 依存の指定方法: {{BASE_MOD_DEPENDENCY}}
+
+## 参考資料（refs/ — 読み取り専用）
+`./setup_refs.sh` で取得。コミットは `refs/SOURCES.lock` に固定されている。
+
+| パス | 用途 |
+|---|---|
+{{REFS_TABLE}}
+
+## 絶対に守るルール
+- `refs/` 配下は**編集しない・実行しない**（`refs/*/gradlew` も含む）。コピーしてよいのは{{COPY_ALLOWED}}のみ。
+- 旧バージョンの API（{{OLD_API_EXAMPLES}}）を書かない。
+- {{LOADER}}{{BASE_MOD_AND}} の API を**記憶で書かない**。使う前に `refs/` で実在とシグネチャを確認する。見つからなければ推測で埋めず報告する。
+- 仕様（数値・レシピ・挙動）を変えるときは、先に `docs/SPEC.md` を更新し、理由を `docs/DEVIATIONS.md` に記録する。
+- 依存の追加やビルド設定の変更は理由を説明してから行う。
+
+## {{SOURCE_MC}} → {{TARGET_MC}} の対応方針
+{{MIGRATION_NOTES}}
+<!-- ASM／Mixin で他 MOD を書き換えている場合のみ -->
+- **元ソースの {{PATCH_LOCATION}} は {{PATCH_TARGET}} の挙動を書き換えている。**
+  新バージョンでは原則として (1) API・イベント・継承で代替、(2) 無理な場合のみ Mixin。
+  Mixin を使う前に、何をどこに注入するかを説明して確認を取る。
+
+## スコープ
+{{SCOPE_NOTES}}
+
+## ワークフロー
+1. `prompts/01_extract_spec.md` で `docs/SPEC.md` を作る（コードは書かない）
+2. 人間が SPEC をレビュー
+3. `refs/{{TEMPLATE_REF}}` を雛形にプロジェクトを作成（mod_id: `{{MOD_ID}}`）
+4. `prompts/02_implement_feature.md` で**1機能ずつ**実装
+5. 各機能で `./gradlew build` が通ること、`./gradlew runClient` での確認手順を提示すること
+6. 数値ロジックは可能な範囲で GameTest を書く
+
+## ライセンスと利用範囲
+{{LICENSE_SECTION}}

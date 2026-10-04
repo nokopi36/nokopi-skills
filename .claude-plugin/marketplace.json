@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "nokopi-skills",
+  "description": "nokopi の Claude Code スキル集。テーマごとのプラグインから必要なものだけインストールできる",
+  "owner": {
+    "name": "nokopi"
+  },
+  "plugins": [
+    {
+      "name": "mc-mod",
+      "source": "./plugins/mc-mod",
+      "description": "オリジナル MOD の作成（mc-mod-create）と、既存 MOD の新バージョンへの移植（mc-mod-port）"
+    }
+  ]
+}

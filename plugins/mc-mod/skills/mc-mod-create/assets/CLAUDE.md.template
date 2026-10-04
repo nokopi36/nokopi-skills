@@ -1,0 +1,28 @@
+# {{MOD_NAME}}
+
+オリジナル MOD。仕様は `docs/SPEC.md`、進捗は `docs/PROGRESS.md`。作業開始時に両方を読むこと。
+
+## 環境
+- Minecraft {{MC_VERSION}} / {{LOADER}} {{LOADER_VERSION}} / Java {{JAVA_VERSION}}
+- mod_id: `{{MOD_ID}}` / パッケージ: `{{PACKAGE}}`
+- 連携 MOD: {{DEPENDENCIES}}
+
+## 参考資料（refs/ — 読み取り専用）
+`./setup_refs.sh` で取得。コミットは `refs/SOURCES.lock` に固定。
+
+| パス | 用途 |
+|---|---|
+{{REFS_TABLE}}
+
+## ルール
+- `refs/` 配下は編集しない・実行しない。類似 MOD のコードはコピーせず、書き方の参考にとどめる。
+- {{LOADER}}{{DEPENDENCY_AND}} の API を記憶で書かない。`refs/` で実在とシグネチャを確認してから使う。見つからなければ推測せず報告する。
+- 古い書き方（{{OLD_API_EXAMPLES}}）を使わない。
+- 1 回に 1 機能。計画 → 承認 → 実装 → `./gradlew build` → GameTest（あれば）→ `runClient` 確認手順の提示 → PROGRESS 更新とコミット。
+- SPEC にない機能を勝手に足さない。仕様を変えるときは SPEC を先に更新し、理由を `docs/DEVIATIONS.md` に書く。
+- 依存の追加・ビルド設定の変更は理由を説明してから行う。
+- 数値は定数か config にまとめ、調整しやすくする。
+- 言語ファイルは `en_us.json` と `ja_jp.json` の両方を更新する。可能な限りデータ生成で出力する。
+
+## 利用範囲とライセンス
+{{LICENSE_SECTION}}

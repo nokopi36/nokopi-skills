@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "nokopi-skills": {
+      "source": {
+        "source": "github",
+        "repo": "nokopi36/nokopi-skills"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "mc-mod@nokopi-skills": true
+  }
+}

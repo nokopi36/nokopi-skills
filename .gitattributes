@@ -1,0 +1,3 @@
+# Windows でクローンしても bash スクリプトが CRLF で壊れないように
+* text=auto
+*.sh text eol=lf

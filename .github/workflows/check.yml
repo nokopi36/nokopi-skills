@@ -1,0 +1,21 @@
+name: check
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: 共通ファイルのずれ
+        run: tools/sync_shared.sh --check
+      - name: マーケットプレイスとプラグインの検証
+        run: |
+          npx -y @anthropic-ai/claude-code@2.1.288 plugin validate .
+          for p in plugins/*/; do npx -y @anthropic-ai/claude-code@2.1.288 plugin validate "$p"; done
+      - name: シェルスクリプトの構文と shellcheck
+        run: |
+          for f in $(git ls-files '*.sh'); do bash -n "$f"; done
+          shellcheck -S warning $(git ls-files '*.sh')
