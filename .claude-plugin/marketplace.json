@@ -9,7 +9,7 @@
     {
       "name": "mc-mod",
       "source": "./plugins/mc-mod",
-      "description": "オリジナル MOD の作成（mc-mod-create）と、既存 MOD の新バージョンへの移植（mc-mod-port）"
+      "description": "Minecraft の MOD 作成（mc-mod-create）、既存 MOD の移植（mc-mod-port）、モッドパックとクエストの作成（mc-modpack）"
     }
   ]
 }

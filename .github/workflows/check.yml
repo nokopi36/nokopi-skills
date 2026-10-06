@@ -19,3 +19,6 @@ jobs:
         run: |
           for f in $(git ls-files '*.sh'); do bash -n "$f"; done
           shellcheck -S warning $(git ls-files '*.sh')
+      - name: Python スクリプトの構文
+        run: |
+          for f in $(git ls-files '*.py'); do python3 -m py_compile "$f"; done

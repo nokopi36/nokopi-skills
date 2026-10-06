@@ -7,7 +7,7 @@ nokopi の [Claude Code](https://code.claude.com/) スキル集（プラグイ�
 
 | プラグイン | スキル | 内容 |
 |---|---|---|
-| **mc-mod** | `mc-mod-create`, `mc-mod-port` | Minecraft MOD 開発。アイデアから MOD を作る／古い MOD・アドオンを新バージョンへ書き直す（[詳細](plugins/mc-mod/README.md)） |
+| **mc-mod** | `mc-mod-create`, `mc-mod-port`, `mc-modpack` | Minecraft MOD 開発。アイデアから MOD を作る／古い MOD・アドオンを新バージョンへ書き直す／モッドパックとクエストを作る（[詳細](plugins/mc-mod/README.md)） |
 
 ## インストール
 

@@ -1,0 +1,21 @@
+# {{PACK_NAME}}（モッドパック）
+
+packwiz で管理するモッドパック。方針は `docs/PACK.md`、進捗は `docs/PROGRESS.md`。作業開始時に両方を読むこと。
+
+## 環境
+- Minecraft {{MC_VERSION}} / {{LOADER}} {{LOADER_VERSION}}
+- FTB Quests: {{FTBQ_VERSION}}（形式: {{QUEST_FORMAT}}）
+- packwiz: `{{PACKWIZ_PATH}}`
+
+## ルール
+- MOD の追加・削除は `docs/PACK.md` の MOD 一覧（役割と理由）も同時に更新する。理由のない MOD を入れない
+- MOD の追加は packwiz で行う（jar を直接置かない）。取得元は Modrinth を優先
+- 対象バージョン・ローダーの対応版がない MOD を、別バージョン向けの版で無理に入れない
+- 追加・削除・設定変更のあとは `modrinth.py check` と起動テスト（`boot_test.py`）を通す
+- config やクエストを手で編集したら `packwiz refresh`
+- `run/` はテスト用。パックに含めない（`.packwizignore` と `.gitignore` に入れてある）
+- クエストのアイテム ID は記憶で書かず、`quests.py find` でパック内の実在を確認する。書いたら `quests.py validate`
+- ゲーム内でクエストを編集したら、そのファイルを読み直してから続きを書く
+
+## 利用範囲
+{{USAGE_SECTION}}
