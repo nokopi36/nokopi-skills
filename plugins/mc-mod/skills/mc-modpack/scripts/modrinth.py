@@ -24,7 +24,7 @@ import urllib.request
 from pathlib import Path
 
 API = "https://api.modrinth.com/v2"
-UA = "nokopi-skills/mc-modpack (Claude Code skill; https://github.com/)"
+UA = "nokopi-skills/mc-modpack (Claude Code skill; https://github.com/nokopi36/nokopi-skills)"
 
 
 def get(path: str, **params) -> object:
