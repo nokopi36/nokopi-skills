@@ -1,6 +1,6 @@
 {
   "name": "mc-mod",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Minecraft MOD 開発スキル。アイデアから MOD を作る mc-mod-create、古い MOD／アドオンを新バージョンへ書き直す mc-mod-port、モッドパックとクエストを作る mc-modpack。",
   "author": {
     "name": "nokopi"

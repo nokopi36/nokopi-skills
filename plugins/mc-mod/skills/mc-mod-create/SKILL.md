@@ -71,7 +71,8 @@ CurseForge・Modrinth・GitHub で、アイデアのキーワードと似た MOD
 3. `assets/CLAUDE.md.template` から `CLAUDE.md` を作る（`{{...}}` をすべて埋める）
 4. `refs/<雛形>` から、`.git` を除いてプロジェクト直下にコピー。`gradle.properties` の `mod_id`・`mod_name`・`mod_group_id`・`mod_authors`・`mod_description`、パッケージ名、メインクラス名を変更し、雛形のサンプルコード（サンプルブロック等）は削除する。
    ライセンス欄は私的利用なら `All Rights Reserved`、公開予定ならユーザーに選んでもらう
-5. **初めて `./gradlew` を実行する前に** `scripts/verify_gradle_wrapper.sh` を実行し、Wrapper が公式のものか検証する。失敗したら実行しない
+5. **初めて `./gradlew` を実行する前に** `scripts/verify_gradle_wrapper.sh` を実行し、Wrapper が公式のものか検証する。jar が別バージョンの公式品と一致するのは正常（スクリプトが全リリースと照合する）。
+   スクリプトが失敗したら `./gradlew` を実行せず、独自に照合し直さずにユーザーへ報告する
 6. `./gradlew build` が通ることを確認し、`git init` して最初のコミット（`refs/` は .gitignore 済み）
 7. `assets/PROGRESS.template.md` から `docs/PROGRESS.md` を作る
 
